@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<page title="ثبت کاربر">
+
+    <section title="مشخصات کاربر">
+        <input lable="نام:" type="text" value="obj.name"/>
+        <input lable="نام خانوادگی:" type="text" value="obj.lastName"/>
+        <input lable="کد ملی:" type="text" value="obj.nationalCode"/>
+        <input lable="تاریخ تولد:" type="date" value="obj.date"/>
+        <comboBox lable="جنسیت:" value ="gender">
+
+            <comboItem itemLable ="زن" itemValue="female" />
+            <comboItem itemLable ="مرد" itemValue="male" />
+            <comboItem itemLable ="other" itemValue="other" />
+        </comboBox>
+
+            <table lable="شماره تلفن:" value="obj.number" type="editable">
+
+                <input lable="تلفن:" type="text" value="number"/>
+                 <comboBox lable ="نوع:" value="typePhone">
+
+                  <comboItem itemLable ="ثابت" itemValue="phoneNumber" />
+                  <comboItem itemLable ="همراه" itemValue="cellPhoneNumber" />
+                     <comboItem itemLable ="فکس" itemValue="fax" />
+                     <comboItem itemLable ="سایر موارد" itemValue="other" />
+
+                 </comboBox>
+            </table>
+
+                     <actions>
+                         <button lable="تایید">
+                             <webService address="/ws/add" clearPageOnSuccess="true">
+                             <webServiceInputObject name="obj" />
+                             </webService>
+                         </button>
+                     </actions>
+    </section>
+</page>
